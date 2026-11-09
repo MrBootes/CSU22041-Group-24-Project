@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE uber SYSTEM "uber_xml.dtd">
+<uber>
+    <Account id="1">
+        <name>John Doe</name>
+        <email>john.doe@example.com</email>
+        <phone>+1234567890</phone>
+        <birthday>1990-01-01</birthday>
+        <gender>Male</gender>
+        <rating>4.5</rating>
+        <wallet>
+            <Wallet walletID="1001">
+                <balance>50.00</balance>
+                <IBAN>IE12TEST000000000001</IBAN>
+            </Wallet>
+        </wallet>
+        <verified>true</verified>
+
+        <Rider>
+            <paymentMethods>
+                <PaymentMethod>Card</PaymentMethod>
+                <PaymentMethod>Crypto</PaymentMethod>
+            </paymentMethods>
+            <Payment paymentID="1">
+                <tripId>1</tripId>
+                <amount>25.00</amount>
+                <paymentStatus>Completed</paymentStatus>
+                <type>Card</type>
+                <walletId>1001</walletId>
+            </Payment>
+            <Payment paymentID="2">
+                <tripId>2</tripId>
+                <amount>30.00</amount>
+                <paymentStatus>Processing</paymentStatus>
+                <type>Crypto</type>
+                <walletId>1001</walletId>
+            </Payment>
+            <TripRequest requestID="1">
+                <requestTime>2022-01-01T10:00:00Z</requestTime>
+                <requestLocation>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </requestLocation>
+                <destination>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </destination>
+                <numberOfPassengers>1</numberOfPassengers>
+                <tripReqStatus>Completed</tripReqStatus>
+            </TripRequest>
+            <TripRequest requestID="2">
+                <requestTime>2023-01-01T10:00:00Z</requestTime>
+                <requestLocation>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </requestLocation>
+                <destination>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </destination>
+                <numberOfPassengers>2</numberOfPassengers>
+                <tripReqStatus>Pending payment</tripReqStatus>
+            </TripRequest>
+            <Trip tripId="1">
+                <riderId>1</riderId>
+                <driverId>2</driverId>
+                <requestID>1</requestID>
+                <tripStatus>Completed</tripStatus>
+                <startTime>2022-01-01T10:05:00Z</startTime>
+                <endTime>2022-01-01T10:20:00Z</endTime>
+                <finalCost>25.00</finalCost>
+                <startLocation>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </startLocation>
+                <endLocation>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </endLocation>
+                <duration>15</duration>
+                <distance>5.0</distance>
+            </Trip>
+            <Trip tripId="2">
+                <riderId>1</riderId>
+                <driverId>2</driverId>
+                <requestID>2</requestID>
+                <tripStatus>Pending payment</tripStatus>
+                <startTime>2023-01-01T10:05:00Z</startTime>
+                <endTime>2023-01-01T10:20:00Z</endTime>
+                <finalCost>30.00</finalCost>
+                <startLocation>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </startLocation>
+                <endLocation>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </endLocation>
+                <duration>15</duration>
+                <distance>5.0</distance>
+            </Trip>
+            <SupportTicket ticketId="ticket-001">
+                <issueCategory>Payment Issue</issueCategory>
+                <description>Payment not processed</description>
+                <AISupportSystem botId="bot1">
+                    <sessionId>session-123</sessionId>
+                    <apiKey>api-key-123</apiKey>
+                </AISupportSystem>
+            </SupportTicket>
+            <SupportTicket ticketId="ticket-002">
+                <issueCategory>Payment Issue</issueCategory>
+                <description>Payment not processed</description>
+                <AISupportSystem botId="bot2">
+                    <sessionId>session-124</sessionId>
+                    <apiKey>api-key-123</apiKey>
+                </AISupportSystem>
+            </SupportTicket>
+        </Rider>
+
+        <Driver driverID="driver_102">
+            <carType>Sedan</carType>
+            <isVerified>true</isVerified>
+            <licenseNo>DRIVER-DEMO-001</licenseNo>
+            <vehicleReg>CAR-DEMO-001</vehicleReg>
+            <currentStatus>Available</currentStatus>
+            <isEV>false</isEV>
+            <Trip tripId="1">
+                <riderId>1</riderId>
+                <driverId>2</driverId>
+                <requestID>1</requestID>
+                <tripStatus>Completed</tripStatus>
+                <startTime>2022-01-01T10:05:00Z</startTime>
+                <endTime>2022-01-01T10:20:00Z</endTime>
+                <finalCost>25.00</finalCost>
+                <startLocation>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </startLocation>
+                <endLocation>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </endLocation>
+                <duration>15</duration>
+                <distance>5.0</distance>
+            </Trip>
+            <Trip tripId="2">
+                <riderId>1</riderId>
+                <driverId>2</driverId>
+                <requestID>2</requestID>
+                <tripStatus>Pending payment</tripStatus>
+                <startTime>2023-01-01T10:05:00Z</startTime>
+                <endTime>2023-01-01T10:20:00Z</endTime>
+                <finalCost>30.00</finalCost>
+                <startLocation>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </startLocation>
+                <endLocation>
+                    <Location>
+                        <latitude>37.7749</latitude>
+                        <longitude>-122.4194</longitude>
+                    </Location>
+                </endLocation>
+                <duration>15</duration>
+                <distance>5.0</distance>
+            </Trip>
+        </Driver>
+    </Account>
+
+    <DispatchService>
+        <searchRadiusKm>5.0</searchRadiusKm>
+        <activeDrivers>
+            <driverID>driver_102</driverID>
+            <driverID>driver_103</driverID>
+        </activeDrivers>
+    </DispatchService>
+
+    <NotificationManager>
+        <gatewayProvider>Demo Gateway</gatewayProvider>
+    </NotificationManager>
+
+    <MapService>
+        <apiKey>DEMO-KEY-NOT-REAL</apiKey>
+        <providerName>Demo Maps</providerName>
+    </MapService>
+
+    <Rating ratingId="1">
+        <fromUserId>1</fromUserId>
+        <toUserId>2</toUserId>
+        <rating>5</rating>
+        <comment>Great ride!</comment>
+        <timestamp>2023-01-01T12:00:00Z</timestamp>
+    </Rating>
+    <Rating ratingId="2">
+        <fromUserId>2</fromUserId>
+        <toUserId>1</toUserId>
+        <rating>5</rating>
+        <comment>Great ride!</comment>
+        <timestamp>2023-01-01T12:00:00Z</timestamp>
+    </Rating>
+
+    <PromoCode>
+        <code>WELCOME10</code>
+        <discountAmount>0.10</discountAmount>
+        <used>false</used>
+    </PromoCode>
+    <PromoCode>
+        <code>WELCOME20</code>
+        <discountAmount>0.20</discountAmount>
+        <used>false</used>
+    </PromoCode>
+</uber>

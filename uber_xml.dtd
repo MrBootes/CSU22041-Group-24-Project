@@ -1,0 +1,96 @@
+
+<!ELEMENT uber (Account*, DispatchService*, NotificationManager+, MapService+, Rating*, PromoCode*)>
+
+<!ELEMENT Account (name, email, phone, birthday, gender, rating, wallet, verified, Rider?, Driver?)>
+<!ATTLIST Account id CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT birthday (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
+<!ELEMENT rating (#PCDATA)>
+<!ELEMENT verified (#PCDATA)>
+
+<!ELEMENT wallet (Wallet)>
+<!ELEMENT Wallet (balance, IBAN)>
+<!ATTLIST Wallet walletID CDATA #REQUIRED>
+<!ELEMENT balance (#PCDATA)>
+<!ELEMENT IBAN (#PCDATA)>
+
+<!ELEMENT Rider (paymentMethods, Payment*, TripRequest*, Trip*, SupportTicket*)>
+<!ELEMENT paymentMethods (PaymentMethod*)>
+<!ELEMENT PaymentMethod (#PCDATA)>
+
+<!ELEMENT Payment (tripId, amount, paymentStatus, type, walletId)>
+<!ATTLIST Payment paymentID CDATA #REQUIRED>
+<!ELEMENT tripId (#PCDATA)>
+<!ELEMENT amount (#PCDATA)>
+<!ELEMENT paymentStatus (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT walletId (#PCDATA)>
+
+<!ELEMENT TripRequest (requestTime, requestLocation, destination, numberOfPassengers, tripReqStatus)>
+<!ATTLIST TripRequest requestID CDATA #REQUIRED>
+<!ELEMENT requestTime (#PCDATA)>
+<!ELEMENT requestLocation (Location)>
+<!ELEMENT destination (Location)>
+<!ELEMENT numberOfPassengers (#PCDATA)>
+<!ELEMENT Location (latitude, longitude)>
+<!ELEMENT latitude (#PCDATA)>
+<!ELEMENT longitude (#PCDATA)>
+<!ELEMENT tripReqStatus (#PCDATA)>
+
+<!ELEMENT Trip (riderId, driverId, requestID, tripStatus, startTime, endTime, finalCost, startLocation, endLocation, duration, distance)>
+<!ATTLIST Trip tripId CDATA #REQUIRED>
+<!ELEMENT riderId (#PCDATA)>
+<!ELEMENT driverId (#PCDATA)>
+<!ELEMENT requestID (#PCDATA)>
+<!ELEMENT startTime (#PCDATA)>
+<!ELEMENT endTime (#PCDATA)>
+<!ELEMENT finalCost (#PCDATA)>
+<!ELEMENT startLocation (Location)>
+<!ELEMENT endLocation (Location)>
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT distance (#PCDATA)>
+<!ELEMENT tripStatus (#PCDATA)>
+
+<!ELEMENT SupportTicket (issueCategory, description, AISupportSystem*)>
+<!ATTLIST SupportTicket ticketId CDATA #REQUIRED>
+<!ELEMENT issueCategory (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT AISupportSystem (sessionId, apiKey)>
+<!ATTLIST AISupportSystem botId CDATA #REQUIRED>
+<!ELEMENT sessionId (#PCDATA)>
+<!ELEMENT apiKey (#PCDATA)>
+
+<!ELEMENT Driver (carType, isVerified, licenseNo, vehicleReg, currentStatus, isEV, Trip*)?>
+<!ATTLIST Driver driverID CDATA #REQUIRED>
+<!ELEMENT carType (#PCDATA)>
+<!ELEMENT isVerified (#PCDATA)>
+<!ELEMENT licenseNo (#PCDATA)>
+<!ELEMENT vehicleReg (#PCDATA)>
+<!ELEMENT currentStatus (#PCDATA)>
+<!ELEMENT isEV (#PCDATA)>
+
+<!ELEMENT DispatchService (searchRadiusKm, activeDrivers)>
+<!ELEMENT searchRadiusKm (#PCDATA)>
+<!ELEMENT activeDrivers (driverID*)>
+<!ELEMENT driverID (#PCDATA)>
+
+<!ELEMENT NotificationManager (gatewayProvider)>
+<!ELEMENT gatewayProvider (#PCDATA)>
+
+<!ELEMENT MapService (apiKey, providerName)>
+<!ELEMENT providerName (#PCDATA)>
+
+<!ELEMENT Rating (fromUserId, toUserId, rating, comment, timestamp)>
+<!ATTLIST Rating ratingId CDATA #REQUIRED>
+<!ELEMENT fromUserId (#PCDATA)>
+<!ELEMENT toUserId (#PCDATA)>
+<!ELEMENT comment (#PCDATA)>
+<!ELEMENT timestamp (#PCDATA)>
+
+<!ELEMENT PromoCode (code, discountAmount, used)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT discountAmount (#PCDATA)>
+<!ELEMENT used (#PCDATA)>
